@@ -16,4 +16,3 @@ RUN cd /tmp \
 	&& rm -vf gradle.zip \
 	&& mv gradle-${GRADLE_VERSION}/ /gradle \
 	&& ln -s /gradle/bin/gradle /bin/gradle
-
