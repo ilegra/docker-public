@@ -8,6 +8,9 @@ RUN wget -c http://mirror.nbtelecom.com.br/apache/activemq/activemq-apollo/1.7.1
 
 RUN apache-apollo-1.7.1/bin/apollo create mybroker
 
+RUN sed -i 's/127.0.0.1:61680/0.0.0.0:61680/g' /var/lib/mybroker/etc/apollo.xml
+RUN sed -i 's/127.0.0.1:61681/0.0.0.0:61681/g' /var/lib/mybroker/etc/apollo.xml
+
 WORKDIR /var/lib/mybroker
 
 CMD bin/apollo-broker run
